@@ -10,13 +10,13 @@ Connect through SSH to remote Debian server and update repositories and install 
 
 ```
 sudo apt-get update ; \
-sudo apt-get install -y vim mosh tmux htop git curl wget unzip zip gcc build-essential make
+sudo apt-get install -y  htop git curl wget unzip zip gcc build-essential make
 ```
 
 Configure SSH:
 
 ```
-sudo vim /etc/ssh/sshd_config
+sudo nano /etc/ssh/sshd_config
     AllowUsers www
     PermitRootLogin no
     PasswordAuthentication no
@@ -29,23 +29,10 @@ sudo service ssh restart
 sudo passwd www
 ```
 
-## Init — must-have packages & ZSH
+## Init — must-have packages 
 
 ```
-sudo apt-get install -y zsh tree redis-server nginx  libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-dev python-imaging python3-lxml libxslt-dev python-libxml2 python-libxslt1 libffi-dev libssl-dev python-dev gnumeric libsqlite3-dev libpq-dev libxml2-dev libxslt1-dev libjpeg-dev libfreetype6-dev libcurl4-openssl-dev supervisor
-```
-
-Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh):
-
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-Configure some needed aliases:
-
-```
-vim ~/.zshrc
-    alias cls="clear"
+sudo apt-get install -y  tree redis-server nginx  libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-dev python-imaging python3-lxml libxslt-dev python-libxml2 python-libxslt1 libffi-dev libssl-dev python-dev gnumeric libsqlite3-dev libpq-dev libxml2-dev libxslt1-dev libjpeg-dev libfreetype6-dev libcurl4-openssl-dev supervisor
 ```
 
 ## Install python 3.7
